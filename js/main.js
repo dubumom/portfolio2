@@ -1,16 +1,13 @@
-
-
 // chart 에니메이션
 let chart = $('.chart');
-let excuted = false;
+// let excuted = false;
 
 $(window).scroll(function(){
   let sct = $(this).scrollTop();
-  if(sct >= chart.offset().top - $(window).height()/2){
-    if(!excuted){
+
+  // console.log(sct);
+  if(sct >= 0){
       startAnimation();
-      excuted = true;
-    }
   }
 });
 
@@ -21,11 +18,13 @@ function startAnimation(){
     let circle = $(this).find('circle');
     let targetNum = h2.attr('data-num');
 
+    console.log(targetNum);
     $({rate:0}).animate({rate:targetNum},{
       duration:1500, 
       progress:function(){
         let now = Math.floor(this.rate);
-        let offset = 628 - (628*now/100);
+        let offset = 360 - (360*now/100);
+        console.log(offset);
         h2.text(now);
         //circle의 stroke-dashoffset의 값을 css 메서드 변경
         circle.css({strokeDashoffset:offset});
@@ -33,6 +32,7 @@ function startAnimation(){
     });
   });
 }
+
 
 //wheel 에니메이션
   //휠 애니메이션

@@ -12,7 +12,10 @@
   ==================== variants ==================== 
 */
 :root {
-  --font:1rem;
+  --font-size:10px;
+  --bold:700;
+  --medium:500;
+  --regular:400;
   --row:26px;
   --light-blue: #90CAF9;
   --medium-blue: #1E88E5;
@@ -53,46 +56,46 @@
 .p-row {padding: calc(var(--row)) 0;}
 
 /* 
-  ==================== Text ==================== 
+  ==================== Typograpy ==================== 
 */
+
+/* text/title 초기화 */
+[class^=txt-],
+[class^=tit-],
+[class^=bnr-tit-] {margin:0;}
+p {margin:0;}
+
+html,
+body {font-size:var(--font-size,10px);}
 
 body {
   font-family: "Pretendard Variable", -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
-  font-size: var(--font);
+  font-size: 1.8rem;
   color: var(--text-black);
-  /* overflow-x: hidden; */
+  line-height:2.6rem;
 }
-.banner-title{
-  font-size: calc(4 * var(--font));
-  line-height: 5rem;
-  text-transform: uppercase;
+
+/* text/title */
+.bnr-tit {
+  font-size:4rem;
+  line-height:60px;
+  font-weight:bold;
 }
-.h1{
-  font-size: calc(var(--font) * 2);
-  font-weight: 700; 
-  line-height: 2.5rem;
+.tit-h1{
+  font-size:3.2rem; line-height:4.8rem; font-weight:var(--bold, 700);
 }
-.h2{
-  font-size: calc(var(--font) * 1.75);
-  line-height: 2.5rem;
+.tit-h2{
+  font-size:2.8rem; line-height:4.2rem; font-weight:var(--bold, 700);
 }
-.h3{
-  font-size: calc(var(--font) * 1.625);
-  font-weight: 500;
-  line-height: 1.875rem;
+.tit-h3{
+  font-size:2.4rem; line-height:3.6rem; font-weight:var(--medium, 500);
 }
-.h4{
-  font-size: calc(var(--font) * 1.375);
-  font-weight: 400;
-  line-height: 1.625rem;
+.tit-h4{
+  font-size:2rem; line-height:3rem; font-weight:var(--medium, 500);
 }
-.h5{
-  font-size: calc(var(--font) * 1.25);
-  line-height: 1.5rem;
-}
-.h6{font-size: calc(var(--font) * 1.125);}
-.body_s{font-size: calc(var(--font) * 0.875);}
-.body_xs{font-size: calc(var(--font) * 0.75);}
+.txt-xs {font-size:1.2rem;}
+.txt-sm {font-size:1.4rem;}
+.txt-md {font-size:1.6rem;}
 
 /* header */
 header {
@@ -102,6 +105,20 @@ header {
 }
 header > nav {height: 100%; line-height: 100px;}
 header > nav ul {display: flex; align-items: center; justify-content: start; gap: 30px;}
+header > nav ul li {
+  font-weight: bold;
+  font-size: 2rem;
+  text-transform: uppercase;
+  background:var(--gradient-blue);
+  background: -webkit-linear-gradient(-90deg, rgba(13,71,161,1) 0%, rgba(84,142,209,1) 80%, rgba(144,202,249,1) 100%); 
+  background: -moz-linear-gradient(180deg, rgba(13,71,161,1) 0%, rgba(84,142,209,1) 80%, rgba(144,202,249,1) 100%); 
+  background: -o-linear-gradient(180deg, rgba(13,71,161,1) 0%, rgba(84,142,209,1) 80%, rgba(144,202,249,1) 100%); 
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-box-decoration-break: clone;
+  clip-path: inset(1px);
+}
 
 main {margin-top: 100px;}
 
@@ -124,24 +141,20 @@ main {margin-top: 100px;}
   }
 }
 svg{
-  width: 220px;
-  height: 220px;
+  width: 110px;
+  height: 110px;
 
 }
 circle{
-  stroke-width: 20;
-  fill:#ebebeb;
-  stroke-dasharray: 628px;
-  stroke-dashoffset: 628px;
+  stroke-width: 10;
+  fill:var(--white);
+  stroke:var(--light-blue);
+  stroke-dasharray: 360px;
+  stroke-dashoffset: 360px;
   transform-origin:50% 50%;
   transform:rotate(-90deg);
   stroke-linecap:round;
 }
-
-.chart:nth-child(1) circle {stroke:#ffc114;}
-.chart:nth-child(2) circle {stroke:#ff5248;}
-.chart:nth-child(3) circle {stroke:#19cdca;}
-.chart:nth-child(4) circle {stroke:#4e80e1;}
 
 /* wheel 에니메이션 */
 .image-sequence {
