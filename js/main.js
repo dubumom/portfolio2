@@ -1,3 +1,39 @@
+
+//header nav
+const colors = ["deepskyblue", "orange", "firebrick", "gold", "magenta", "black", "darkblue"];
+const target = $('.nav-target');
+const links = $('header > nav ul li a');
+
+links.on('mouseenter', function() {
+  if (!$(this).parent().hasClass('active')) {
+    links.parent().removeClass('active');
+    $(this).parent().addClass('active');
+    $(this).css('opacity', 1);
+
+    const width = $(this).outerWidth();
+    const height = $(this).outerHeight();
+    const offset = $(this).offset();
+    const color = colors[Math.floor(Math.random() * colors.length)];
+
+    console.log(width, height, offset.left, offset.top);
+
+    target.css({
+      'width': `${width}px`,
+      'height': `${height}px`,
+      'left': `${offset.left}px`,
+      'top': `${offset.top}px`,
+      'border-color': color,
+      'transform': 'none'
+    });
+  }
+});
+
+links.forEach(item=>{
+  item.addEventListener('mouseenter', mouseEnterFunc);
+})
+
+
+
 // chart 에니메이션
 let chart = $('.chart');
 // let excuted = false;

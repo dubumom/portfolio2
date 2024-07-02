@@ -100,11 +100,11 @@ body {
 /* header */
 header {
   width: 100%;
-  height: 100px;
+  height: 80px;
   position: fixed; left: 0; top: 0;
 }
-header > nav {height: 100%; line-height: 100px;}
-header > nav ul {display: flex; align-items: center; justify-content: start; gap: 30px;}
+header > nav {height: 100%; line-height: 80px;}
+header > nav ul {display: flex; align-items: center; justify-content: start; padding: 0;}
 header > nav ul li {
   font-weight: bold;
   font-size: 2rem;
@@ -118,6 +118,52 @@ header > nav ul li {
   -webkit-text-fill-color: transparent;
   -webkit-box-decoration-break: clone;
   clip-path: inset(1px);
+}
+header > nav ul li:not(:last-child) {
+  margin-right: 20px;
+}
+header > nav ul li a {
+  display: block;
+  /* padding: 7px 15px; */
+  /* position: relative; */
+}
+
+.nav-target {
+  position: absolute;
+  /* bottom: 50px; */
+  border-bottom: 4px solid transparent;
+  z-index: -1;
+  -webkit-transform: translateX(-60px);
+          transform: translateX(-60px);
+}
+
+header > nav ul li a,
+.nav-target {
+  -webkit-transition: all .35s ease-in-out;
+  transition: all .35s ease-in-out;
+}
+/* header > nav ul li::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  width: 0%;
+  height: 4px;
+  background-color: #0D47A1;
+  left: 0; bottom: 30px; transition: 0.3s;
+}
+header > nav ul li:hover:after{width: 100%;} */
+
+.underline {
+  line-height: 1.2;
+  background-image: linear-gradient(transparent 50%, rgba(118, 187, 43,0.5) 50%);
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  transition: background-size 0.8s;
+  color: #000;
+  cursor: pointer;
+}
+.underline:hover {
+  background-size: 100% 100%;
 }
 
 main {margin-top: 100px;}
