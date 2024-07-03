@@ -20,7 +20,7 @@
   --light-blue: #90CAF9;
   --medium-blue: #1E88E5;
   --dark-blue: #0D47A1;
-  --gradient-blue: linear-gradient(180deg, rgba(13,71,161,1) 0%, rgba(84,142,209,1) 80%, rgba(144,202,249,1) 100%); 
+  --gradient-blue: linear-gradient(180deg, rgba(144,202,249,1) 0%, rgba(84,142,209,1) 10%, rgba(13,71,161,1) 30%, rgba(84,142,209,1) 80%, rgba(144,202,249,1) 100%); 
   --white: #fff;
   --gradient-whie:linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 80%, rgba(255,255,255,0) 100%);
   --medium-gray: #BFBFBF;
@@ -33,7 +33,7 @@
 /* 
   ==================== layout ==================== 
 */
-#portfolio, .wheel-animation ,#project, #work, #notice {height: 100vh; border: 1px solid red;}
+#portfolio, .wheel-animation ,#project, #work, #notice {width: 100%; height: 100vh; border: 1px solid red;}
 .container {  
   max-width: 1400px;
   width: 90%;
@@ -41,6 +41,7 @@
 }
 .d-flex {display: flex;}
 .jcsb {justify-content: space-between;}
+.jcc {justify-content: center;}
 .aic {align-items: center;}
 .hidden {
   position: fixed;
@@ -54,6 +55,14 @@
   grid-template-rows: auto;
 }
 .p-row {padding: calc(var(--row)) 0;}
+
+.button {
+  background: var(--dark-blue);
+  padding: 10px 20px;
+  color: var(--white);
+  border-radius: 50px;
+  /* margin: var(--row); */
+}
 
 /* 
   ==================== Typograpy ==================== 
@@ -96,6 +105,19 @@ body {
 .txt-xs {font-size:1.2rem;}
 .txt-sm {font-size:1.4rem;}
 .txt-md {font-size:1.6rem;}
+
+/* 
+  ==================== Color ==================== 
+*/
+.light-blue {color: #90CAF9;}
+.medium-blue {color: #1E88E5;}
+.dark-blue {color: #0D47A1;}
+.white {color: #fff;}
+.medium-gray {color: #BFBFBF;}
+.dark-gray {color: #9A9A9A;}
+.light-black {color : #404040;}
+.text-black {color: #333333;}
+.text-sub2 {color: #2C2C2C;}
 
 /* header */
 header {
@@ -156,7 +178,7 @@ header > nav ul li a,
 }
 header > nav ul li:hover:after{width: 100%;} */
 
-.underline {
+/* .underline {
   line-height: 1.2;
   background-image: linear-gradient(transparent 50%, rgba(118, 187, 43,0.5) 50%);
   background-repeat: no-repeat;
@@ -167,19 +189,37 @@ header > nav ul li:hover:after{width: 100%;} */
 }
 .underline:hover {
   background-size: 100% 100%;
-}
-
-main {margin-top: 100px;}
+} */
 
 /* #profile*/
 
+main {margin-top: 100px;}
+#portfolio {background-image: url(../image/back01.png); background-size: cover; background-repeat: no-repeat; height: 100%; width: 100%;}
+/* 말풍선 이미지 다시 찾기 */
+#portfolio >div{position: relative; height: 100%;}
+.profile-img {
+  width: 480px; height: 624px;
+  max-width: 40%;
+  position: absolute; top: -180px; right: 0; z-index: 1001;
+  background-color: var(--light-blue);
+  border-radius: 0 0 110px 110px;
+}
+.profile-img> div {
+  width: 100%; height: 100%;
+  background: url(../image/profile_img.png) no-repeat bottom;
+}
+.profile-img> div ul {margin-top: 30px; gap: 30px;}
+.portfolio-tit {margin: calc(var(--row) * 3) 0 ;}
+.portfolio-tit p {margin-top: var(--row);}
+
 /* protfile-chart */
 .charts{
-  width: 80%;
+  width: 100%;
   margin:2rem auto;
   display: flex;
   justify-content: center;
-  gap:20px;
+  gap:50px;
+  margin: calc(var(--row) * 6) 0;
   .chart{
     position: relative;
     h2{
@@ -200,13 +240,31 @@ circle{
   fill:var(--white);
   stroke:var(--light-blue);
   stroke-dasharray: 360px;
-  stroke-dashoffset: 360px;
+  stroke-dashoffset: 0px;
   transform-origin:50% 50%;
   transform:rotate(-90deg);
   stroke-linecap:round;
 }
+.chart::after{
+  content: attr(data-title);
+  position: absolute; left: 50%; bottom: -30px; transform: translateX(-50%);
+}
+.chart::before {
+  content: attr(data-desc);
+  display: block;
+  position: absolute; left: 50%; top: 0px; transform: translateX(-50%); z-index: 1002;
+  width: 200%;
+  padding: 30px;
+  background: url(../image/bubble.PNG) no-repeat;
+  background-size: 100% 100%;
+  opacity: 0;
+  transition: 0.8s;
+  font-size: 12px;
+  line-height: normal;
+}
+.chart:hover::before {top: -130px; opacity: 1;}
 
-/* wheel 에니메이션 */
+/* wheel 에니메이션 - 작업 중*/
 .image-sequence {
   position: absolute;
   height: 100%;

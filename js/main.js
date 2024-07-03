@@ -1,3 +1,5 @@
+//header nav
+
 const header = document.querySelector('header');
 const headerOst = header.offsetTop;
 
@@ -6,14 +8,13 @@ window.addEventListener('scroll',()=>{
   let scrollAmt = window.scrollY;
   // console.log(scrollAmt);
 
-  if(scrollAmt > 2000){
+  if(scrollAmt > 80){
     header.classList.add('sticky');
   } else {
     header.classList.remove('sticky');  
   }
 
 });
-//header nav
 const colors = ["deepskyblue", "orange", "firebrick", "gold", "magenta", "black", "darkblue"];
 const target = $('.nav-target');
 const links = $('header > nav ul li a');
