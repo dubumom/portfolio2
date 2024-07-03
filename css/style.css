@@ -63,6 +63,10 @@
   border-radius: 50px;
   /* margin: var(--row); */
 }
+.button:hover {
+  background-color: var(--light-blue);
+  color: var(--dark-blue);
+}
 
 /* 
   ==================== Typograpy ==================== 
@@ -311,7 +315,7 @@ circle{
   transform:translateY(-50%);
   border-radius:20px;
   overflow: hidden;
-  box-shadow: inset 0 20px 30px rgba(255,255,255,.3);
+  /* box-shadow: inset 0 20px 30px rgba(255,255,255,.3); */
   transition:transform 0.1s, left 0.75s, top 0.75s, width 0.75s, height 0.75s;
   figure{
     width: 100%;
@@ -339,24 +343,20 @@ circle{
   &:nth-child(8) {left:calc(50% + 1100px); opacity:0;}
 }
 figcaption{
-  width:min(30vw, 400px);
+  width:min(30vw, 500px);
   position: absolute;
   left: 3rem;
   top:50%;
   transform:translateY(-50%);
-  font:400 0.85rem Arial, sans-serif;
-  color: #fff;
-  text-shadow: 0 3px 8px rgba(0,0,0,.5);
+  /* font:400 0.85rem Arial, sans-serif; */
+  /* color: #fff; */
+  /* text-shadow: 0 3px 8px rgba(0,0,0,.5); */
   opacity: 0;
   visibility: hidden;
-  h2{
-    font-family: 'Arial-black';
-    text-transform: uppercase;
-  }
   p{
     line-height: 1.7;
     margin:1rem 0 1.5rem;
-    font-size: 0.8rem;
+    /* font-size: 0.8rem; */
   }
 }
 .item:nth-child(2) figcaption{
@@ -379,7 +379,7 @@ figcaption{
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 2rem;
+  bottom: 20rem;
   display: flex;
   justify-content: center;
   gap:15px;
@@ -387,9 +387,9 @@ figcaption{
     width: 40px;
     height: 40px;
     cursor: pointer;
-    color: red;
+    color: var(--light-black);
     &:hover{
-      color: blue;
+      color: var(--medium-blue);
     }
   }
 }

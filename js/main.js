@@ -1,5 +1,5 @@
-//header nav
-
+//header nav -> 해당 스크립트 실행 시 뒤에 있는 스크립트 전체 안됨!
+/*
 const header = document.querySelector('header');
 const headerOst = header.offsetTop;
 
@@ -45,6 +45,10 @@ links.on('mouseenter', function() {
 links.forEach(item=>{
   item.addEventListener('mouseenter', mouseEnterFunc);
 })
+*/
+
+
+
 
 // chart 에니메이션
 let chart = $('.chart');
