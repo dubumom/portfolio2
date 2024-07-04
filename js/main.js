@@ -1,5 +1,5 @@
 //header nav -> 해당 스크립트 실행 시 뒤에 있는 스크립트 전체 안됨!
-/*
+
 const header = document.querySelector('header');
 const headerOst = header.offsetTop;
 
@@ -18,35 +18,39 @@ window.addEventListener('scroll',()=>{
 const colors = ["deepskyblue", "orange", "firebrick", "gold", "magenta", "black", "darkblue"];
 const target = $('.nav-target');
 const links = $('header > nav ul li a');
+console.log(links);
 
-links.on('mouseenter', function() {
-  if (!$(this).parent().hasClass('active')) {
-    links.parent().removeClass('active');
-    $(this).parent().addClass('active');
-    // $(this).css('opacity', 1);
+links.on('mouseenter', mouseEnterFunc);
 
-    const width = $(this).outerWidth();
-    const height = $(this).outerHeight();
-    const offset = $(this).offset();
-    const color = colors[Math.floor(Math.random() * colors.length)];
 
-    // console.log(width, height, offset.left, offset.top);
-    target.css({
-      'width': `${width}px`,
-      'height': `${height}px`,
-      'left': `${offset.left}px`,
-      'top': `${offset.top}px`,
-      'border-color': color,
-      'transform': 'none'
-    });
-  }
-});
+// links.each(item=>{
+//   item.on('mouseenter', mouseEnterFunc);
+// })
 
-links.forEach(item=>{
-  item.addEventListener('mouseenter', mouseEnterFunc);
-})
-*/
-
+function mouseEnterFunc(){
+  links.on('mouseenter', function() {
+    if (!$(this).parent().hasClass('active')) {
+      links.parent().removeClass('active');
+      $(this).parent().addClass('active');
+      // $(this).css('opacity', 1);
+  
+      const width = $(this).outerWidth();
+      const height = $(this).outerHeight();
+      const offset = $(this).offset();
+      const color = colors[Math.floor(Math.random() * colors.length)];
+  
+      // console.log(width, height, offset.left, offset.top);
+      target.css({
+        'width': `${width}px`,
+        'height': `${height}px`,
+        'left': `${offset.left}px`,
+        'top': `${offset.top}px`,
+        'border-color': color,
+        'transform': 'none'
+      });
+    }
+  });
+}
 
 
 
