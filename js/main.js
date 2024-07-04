@@ -253,3 +253,26 @@ function getDirection() {
 
   return direction;
 }
+
+const scrollContainer = document.querySelector('.work-itme ul');
+const items = document.querySelectorAll('.work-itme ul li');
+
+scrollContainer.addEventListener('scroll', function() {
+    // 스크롤 컨테이너의 현재 스크롤 위치
+    const scrollTop = scrollContainer.scrollTop;
+    const scrollHeight = scrollContainer.clientHeight;
+
+    items.forEach(item => {
+        // 아이템의 위치
+        const itemTop = item.offsetTop;
+
+        // 아이템이 화면의 중간에 들어왔을 때의 조건 설정
+        const triggerPoint = scrollHeight / 2;
+
+        if (itemTop < scrollTop + triggerPoint) {
+            item.classList.add('on');
+        } else {
+            item.classList.remove('on');
+        }
+    });
+});

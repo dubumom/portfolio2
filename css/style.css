@@ -33,7 +33,7 @@
 /* 
   ==================== layout ==================== 
 */
-#portfolio, .wheel-animation ,#project, #work, #notice {width: 100%; height: 100vh; border: 1px solid red;}
+#portfolio, .wheel-animation ,#project, #notice {width: 100%; height: 100vh; border: 1px solid red;}
 .container {  
   max-width: 1400px;
   width: 90%;
@@ -101,7 +101,6 @@
   color: #fff;
   opacity: 0;
 }
-
 
 /*  
   ==================== Typograpy ==================== 
@@ -337,18 +336,7 @@ circle{
   overflow: hidden;
   position: relative;
 }
-.work-title-wrap{
-  font-weight: 700;
-  display: block;
-  font-size: 20rem;
-  text-align: center;
-  padding-top: 10rem;
-}
-#project .work-itme{
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
+
 .item{
   width: 200px;
   height: 300px;
@@ -437,9 +425,39 @@ figcaption{
   }
 }
 
+/* work */
+#work {
+
+}
+.sticky {
+  flex-direction: column;
+}
+.work-title-wrap{
+  font-weight: 700;
+  font-size: 20rem;
+  text-align: center;
+  padding-top: 25rem;
+  position: sticky; top: 0;
+}
+
+.work-itme ul{
+  padding-left: 0;
+  justify-items: center;
+  justify-content: center;
+  max-width: inherit;
+  width: fit-content;
+  margin: 0 auto;
+  gap: 15rem;
+}
+.work-itme ul li:nth-child(4n - 3) {
+  margin-top: 15.3rem;
+}
+.work-itme ul li {transform: scale(1); transition: transform 0.2s ease;}
+.work-itme ul li.on {transform: scale(1);}
+
 /* notice -swiper */
 #notice {
-  position: relative;
+  /* position: absolute; */
 }
 .swiper {
   width: 100%;
