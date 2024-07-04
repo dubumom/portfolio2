@@ -1,5 +1,4 @@
-//header nav -> 해당 스크립트 실행 시 뒤에 있는 스크립트 전체 안됨!
-
+//header nav
 const header = document.querySelector('header');
 const headerOst = header.offsetTop;
 
@@ -18,10 +17,9 @@ window.addEventListener('scroll',()=>{
 const colors = ["deepskyblue", "orange", "firebrick", "gold", "magenta", "black", "darkblue"];
 const target = $('.nav-target');
 const links = $('header > nav ul li a');
-console.log(links);
+// console.log(links);
 
 links.on('mouseenter', mouseEnterFunc);
-
 
 // links.each(item=>{
 //   item.on('mouseenter', mouseEnterFunc);
@@ -51,8 +49,6 @@ function mouseEnterFunc(){
     }
   });
 }
-
-
 
 // chart 에니메이션
 let chart = $('.chart');
@@ -140,6 +136,7 @@ function animateSequence(){
     $images.eq($currentFrame).hide();
     $currentFrame = $nextFrame;
     //console.log($currentFrame, $nextFrame);
+    // $(this).css('opacity', 0);s
   }
   
 }
@@ -253,26 +250,3 @@ function getDirection() {
 
   return direction;
 }
-
-const scrollContainer = document.querySelector('.work-itme ul');
-const items = document.querySelectorAll('.work-itme ul li');
-
-scrollContainer.addEventListener('scroll', function() {
-    // 스크롤 컨테이너의 현재 스크롤 위치
-    const scrollTop = scrollContainer.scrollTop;
-    const scrollHeight = scrollContainer.clientHeight;
-
-    items.forEach(item => {
-        // 아이템의 위치
-        const itemTop = item.offsetTop;
-
-        // 아이템이 화면의 중간에 들어왔을 때의 조건 설정
-        const triggerPoint = scrollHeight / 2;
-
-        if (itemTop < scrollTop + triggerPoint) {
-            item.classList.add('on');
-        } else {
-            item.classList.remove('on');
-        }
-    });
-});

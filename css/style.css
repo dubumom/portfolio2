@@ -242,7 +242,7 @@ header > nav ul li:hover:after{width: 100%;} */
 /* #profile*/
 
 main {margin-top: 100px;}
-#portfolio {background-image: url(../image/back01.png); background-size: cover; background-repeat: no-repeat; height: 100%; width: 100%;}
+#portfolio {background-image: url(../image/back01.png); background-size: cover; background-repeat: no-repeat; height: 100vh; width: 100%;}
 /* 말풍선 이미지 다시 찾기 */
 #portfolio >div{position: relative; height: 100%;}
 .profile-img {
