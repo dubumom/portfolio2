@@ -447,7 +447,7 @@ figcaption{
   font-size: 20rem;
   text-align: center;
   padding-top: 25rem;
-  position: sticky; top: 0;
+  position: sticky; top: 0; z-index: -1;
 }
 
 .work-itme ul{
@@ -459,12 +459,31 @@ figcaption{
   margin: 0 auto;
   gap: 15rem;
 }
-.work-itme ul li:nth-child(4n - 3) {
-  margin-top: 15.3rem;
+.work-itme ul li:nth-child(odd) {margin-top: 15.3rem;}
+.work-itme ul li:nth-child(2n) {margin-bottom: 15.3rem;}
+.work-itme ul li {
+  /* transform: scale(1);
+  transition: transform 0.2s ease; */
+  overflow: hidden;
+  position: relative;
+  background-color: var(--white);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
-.work-itme ul li {transform: scale(1); transition: transform 0.2s ease;}
-.work-itme ul li.on {transform: scale(1);}
-
+/* .work-itme ul li.on {transform: scale(1);} */
+.work-txt {padding: 3rem;}
+.work-hover-desc{
+  padding: 3rem;
+  background: var(--text-black);
+  color: var(--white);
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+}
+.work-hover-desc * {margin: 10px 0;}
+.work-hover-desc {opacity: 0; transition: 0.5s;}
+.work-itme ul li:hover .work-hover-desc {opacity: 1;}
+.work-img {transition: 0.5s;}
+.work-itme ul li:hover .work-img {transform: scale(1.1); transform-origin: center; }
+.shortcut:hover{color: var(--point);}
 /* notice -swiper */
 #notice {position: relative;}
 .swiper {
