@@ -6,6 +6,7 @@
   <title>wooyeji-portfolio</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="./js/vendor/modernizr.custom.min.js"></script>
   <script src="./js/vendor/jquery-1.10.2.min.js"></script>
   <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
@@ -27,71 +28,6 @@
     <span class="nav-target"></span>
   </header> <!-- //header-->
   <main>
-    <section id="portfolio">
-      <div class="container">
-        <h2 class="hidden">portfolio</h2>
-        <aside class="profile-img">
-          <div>
-            <ul class="d-flex jcc aic">
-              <li><a href="https://www.notion.so/b6b536f4720e4cefb4d171defd739e00"><img src="image/notion_icon.png" alt="노션"></a></li>
-              <li><a href="https://github.com/dubumom/portfolio2"><img src="image/git_icon.png" alt="깃허브"></a></li>
-              <li><a href="#"><img src="image/slack_icon.png" alt="슬랙"></a></li>
-            </ul> 
-          </div>
-        </aside>
-        <div class="portfolio-tit">
-          <h2 class="tit-h1">안녕하세요<br><em class="bnr-tit">웹 프론트엔드 개발자 <br> <strong class="medium-blue">우예지</strong>입니다.</em></h2>
-          <p>"최신 기술을 빠르게 습득하고 창의적인 해결책을 통해 사용자 경험을 극대화 하는 <br> 프론트엔드 개발자가 되겠습니다."</p>
-        </div>
-        <a href="#" class="button" data-btn="이력서 바로가기"></a>
-        <div class="charts">
-          <div class="chart" data-title="HTML5" data-desc="웹표준, 웹접근성을 준수하여 작업하며
-          새로운 태그를 바로적용할 수 있습니다.">
-            <h2 data-num="90">0</h2>
-            <svg>
-              <circle cx="55" cy="55" r="50"></circle>
-            </svg>
-          </div>
-          <div class="chart" data-title="CSS3" data-desc="크로스 브라우징에 능숙하며, bootstrap, tailwind도 사용할 수 있습니다.">
-            <h2 data-num="90">0</h2>
-            <svg>
-              <circle cx="55" cy="55" r="50"></circle>
-            </svg>
-          </div>
-          <div class="chart" data-title="javascript" data-desc="바닐라 자바스크립트로 구현한 웹페이지 다수 개발하였으며, 다양한 라이브러리 사용에 능통합니다."> 
-            <h2 data-num="65">0</h2>
-            <svg>
-              <circle cx="55" cy="55" r="50"></circle>
-            </svg>
-          </div>
-          <div class="chart" data-title="jQuery" data-desc="제이쿼리로 구현한 웹페이지 다수 개발하였으며, 다양한 라이브러리 사용에 능통합니다.">
-            <h2 data-num="70">0</h2>
-            <svg>
-              <circle cx="55" cy="55" r="50"></circle>
-            </svg>
-          </div>
-          <div class="chart" data-title="php" data-desc="php로 lms사이트를 개발하였고, Mysql과 연동할 수 있습니다.">
-            <h2 data-num="60">0</h2>
-            <svg>
-              <circle cx="55" cy="55" r="50"></circle>
-            </svg>
-          </div>
-          <div class="chart" data-title="Mysql" data-desc="Mysql데이터를 활용한 CRUD 가능합니다.">
-            <h2 data-num="10">0</h2>
-            <svg>
-              <circle cx="55" cy="55" r="50"></circle>
-            </svg>
-          </div>
-          <div class="chart" data-title="React" data-desc="react의 기본문법을 이해하며, CRUD가능합니다. 해당 페이지 또한 react로 개발하였습니다.">
-            <h2 data-num="50">0</h2>
-            <svg>
-              <circle cx="55" cy="55" r="50"></circle>
-            </svg>
-          </div>
-        </div>
-      </div>
-
-    </section> <!-- //#portfolio-->
 
     <section class="scene wheel-animation" id="scene-1">
       <div class="image-sequence">
@@ -287,7 +223,80 @@
         <img src="image/sequence/sky191.jpg" alt="">
         <img src="image/sequence/sky192.jpg" alt="">
       </div>
+      <p class="instruction">
+        <img alt="" class="image" src="image/mouse-black.png" width="74" height="69">
+        <span class="text">Scroll to play</span>
+      </p>
     </section><!-- /.scene#scene-1 -->
+    <div class="progress">
+      <span class="bar"></span>
+      <span class="rate">0%</span>
+    </div>
+    <section id="portfolio">
+      <div class="container">
+        <h2 class="hidden">portfolio</h2>
+        <aside class="profile-img">
+          <div>
+            <ul class="d-flex jcc aic">
+              <li><a href="https://www.notion.so/b6b536f4720e4cefb4d171defd739e00"><img src="image/notion_icon.png" alt="노션"></a></li>
+              <li><a href="https://github.com/dubumom/portfolio2"><img src="image/git_icon.png" alt="깃허브"></a></li>
+              <li><a href="#"><img src="image/slack_icon.png" alt="슬랙"></a></li>
+            </ul> 
+          </div>
+        </aside>
+        <div class="portfolio-tit">
+          <h2 class="tit-h1">안녕하세요<br><em class="bnr-tit">웹 프론트엔드 개발자 <br> <strong class="medium-blue">우예지</strong>입니다.</em></h2>
+          <p>"최신 기술을 빠르게 습득하고 창의적인 해결책을 통해 사용자 경험을 극대화 하는 <br> 프론트엔드 개발자가 되겠습니다."</p>
+        </div>
+        <a href="#" class="button" data-btn="이력서 바로가기"></a>
+        <div class="charts">
+          <div class="chart" data-title="HTML5" data-desc="웹표준, 웹접근성을 준수하여 작업하며
+          새로운 태그를 바로적용할 수 있습니다.">
+            <h2 data-num="90">0</h2>
+            <svg>
+              <circle cx="55" cy="55" r="50"></circle>
+            </svg>
+          </div>
+          <div class="chart" data-title="CSS3" data-desc="크로스 브라우징에 능숙하며, bootstrap, tailwind도 사용할 수 있습니다.">
+            <h2 data-num="90">0</h2>
+            <svg>
+              <circle cx="55" cy="55" r="50"></circle>
+            </svg>
+          </div>
+          <div class="chart" data-title="javascript" data-desc="바닐라 자바스크립트로 구현한 웹페이지 다수 개발하였으며, 다양한 라이브러리 사용에 능통합니다."> 
+            <h2 data-num="65">0</h2>
+            <svg>
+              <circle cx="55" cy="55" r="50"></circle>
+            </svg>
+          </div>
+          <div class="chart" data-title="jQuery" data-desc="제이쿼리로 구현한 웹페이지 다수 개발하였으며, 다양한 라이브러리 사용에 능통합니다.">
+            <h2 data-num="70">0</h2>
+            <svg>
+              <circle cx="55" cy="55" r="50"></circle>
+            </svg>
+          </div>
+          <div class="chart" data-title="php" data-desc="php로 lms사이트를 개발하였고, Mysql과 연동할 수 있습니다.">
+            <h2 data-num="60">0</h2>
+            <svg>
+              <circle cx="55" cy="55" r="50"></circle>
+            </svg>
+          </div>
+          <div class="chart" data-title="Mysql" data-desc="Mysql데이터를 활용한 CRUD 가능합니다.">
+            <h2 data-num="10">0</h2>
+            <svg>
+              <circle cx="55" cy="55" r="50"></circle>
+            </svg>
+          </div>
+          <div class="chart" data-title="React" data-desc="react의 기본문법을 이해하며, CRUD가능합니다. 해당 페이지 또한 react로 개발하였습니다.">
+            <h2 data-num="50">0</h2>
+            <svg>
+              <circle cx="55" cy="55" r="50"></circle>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+    </section> <!-- //#portfolio-->
 
     <section id="project">
       <h2 class="hidden">project</h2>
@@ -392,7 +401,7 @@
                 <p>원페이지 레이아웃으로 디자인 하였으며, 기존 소스뮤직 사이트를 참고하여 웹페이지의 접근성을 높히고 심미성 증진을 목표로 기획 하였습니다.</p>
                 <p>제작 기한 : 약 3주</p>
                 <p>피그마, 포토샵, 구글 캘린더 </p>
-                <a href="https://www.figma.com/proto/2gckeiReA5euFJkdkTq4Kl/1%EC%B0%A8-%EA%B3%BC%EC%A0%9C-%ED%8E%98%EC%9D%B4%EC%A7%80-%EB%A6%AC%EB%89%B4%EC%96%BC---%EB%A5%B4%EC%84%B8%EB%9D%BC%ED%95%8C?page-id=30%3A117&node-id=30-118&viewport=441%2C424%2C0.02&t=RdYxVRgXAPf7NpXe-1&scaling=min-zoom&content-scaling=fixed" class="tit-h4 shortcut" target="_blank">바로가기 &#187;</a>
+                <a href="https://www.figma.com/proto/2gckeiReA5euFJkdkTq4Kl/1%EC%B0%A8-%EA%B3%BC%EC%A0%9C-%ED%8E%98%EC%9D%B4%EC%A7%80-%EB%A6%AC%EB%89%B4%EC%96%BC---%EB%A5%B4%EC%84%B8%EB%9D%BC%ED%95%8C?page-id=30%3A117&node-id=30-118&viewport=441%2C424%2C0.02&t=RdYxVRgXAPf7NpXe-1&scaling=min-zoom&content-scaling=fixed" class="tit-h4 shortcut" target="">바로가기 &#187;</a>
               </div>
             </li>
             <li class="">
@@ -469,6 +478,19 @@
                 <h3 class="tit-h2 light-blue">'오'키친 사이트</h3>
                 <p>기존 오키친 사이트가 반응형으로 리뉴얼 되기 전 먼저 반응형으로 구성해본 사이트 입니다. 레시피를 필요로 하는 주부, 자취생을 타겟으로 키워드에 맞는 정보를 제공하고 명료한 정보전달을 목표로 제작하였습니다.</p>
                 <p>제작 기한 : 약 5주</p>
+                <p>피그마, 포토샵, 일러스트</p>
+                <a href="https://www.figma.com/proto/gIeAZXRXDeyb1GKToWaWZk/'%EC%98%A4'%ED%82%A4%EC%B9%9C?page-id=0%3A1&node-id=1-290&viewport=442%2C373%2C0.06&t=B2LgsDQS2Hipz8KF-1&scaling=contain&content-scaling=fixed" class="tit-h4 shortcut" target="_blank">바로가기 &#187;</a>
+              </div>
+            </li>
+            <li class="">
+              <div class="work-img"><a href="#"><img src="./image/work_item08.png" alt=""></a></div>
+              <div class="work-txt">
+                <h3 class="tit-h2"><span class="tit-h4 medium-blue">기획 및 디자인</span><br>박물관 안내 앱 개발</h3>
+              </div>
+              <div class="work-hover-desc">
+                <h3 class="tit-h2 light-blue">"뮤지엄 고" 앱</h3>
+                <p>전국의 박물관 정보를 제공하고 예약, 예매까지 연동할 수 있는 앱 사이트를 기획 및 디자인 하였습니다.</p>
+                <p>제작 기한 : 약 6주</p>
                 <p>피그마, 포토샵, 일러스트</p>
                 <a href="https://www.figma.com/proto/gIeAZXRXDeyb1GKToWaWZk/'%EC%98%A4'%ED%82%A4%EC%B9%9C?page-id=0%3A1&node-id=1-290&viewport=442%2C373%2C0.06&t=B2LgsDQS2Hipz8KF-1&scaling=contain&content-scaling=fixed" class="tit-h4 shortcut" target="_blank">바로가기 &#187;</a>
               </div>

@@ -87,6 +87,42 @@ function startAnimation(){
 
 
 //wheel 에니메이션
+imageProgress();
+
+function imageProgress(){
+    let $container = $('.progress'),
+        $bar = $container.find('.bar'),
+        $text = $container.find('.rate'),
+        $imgload = imagesLoaded('body'),
+        $imgTotal = $imgload.images.length,
+        $imgLoaded = 0,
+        $current = 0,
+        $progressTimer = setInterval(updateProgress, 1000/60);
+
+    // 이미지 로드 될 때마다 할 일 (진행 중 할 일)
+    $imgload.on('progress', () => {
+        $imgLoaded++;
+    });
+
+    function updateProgress(){
+        // 로드 완료한 이미지의 비율
+        let $target = ($imgLoaded / $imgTotal) * 100;
+        $current += ($target - $current) * 0.1;
+
+        $bar.css({width: $current + '%'});
+        $text.text(Math.ceil($current) + '%');
+
+        if ($current > 99.9) {
+            $current = 100;
+        }
+
+        if ($current >= 100){
+            clearInterval($progressTimer);
+            $container.addClass('complete');
+            $container.animate({top: '-100%'}, 1000,);
+        }
+    }
+}
 //휠 애니메이션
 $imageSequence = $('.image-sequence');
 $images = $imageSequence.find('img');
@@ -121,7 +157,7 @@ function stopAnimation(){
 function animateSequence(){
   let $nextFrame ;
   $velocity *= 0.9;
-  console.log($velocity);
+  // console.log($velocity);
   if($velocity > -0.00001 && $velocity<0.00001){
     stopAnimation();
   } else{
@@ -140,82 +176,6 @@ function animateSequence(){
   }
   
 }
-
-//   let $imageSequence = $('.image-sequence');
-//   let $images = $imageSequence.find('img');
-//   let $frameLength = $images.length;
-//   let $currentFrame = 0;
-//   let $isSticky = false; // 스티키 상태 여부를 나타내는 변수
-
-//   // 초기 설정: 첫 번째 이미지 보이기
-//   $images.hide();
-//   $images.eq($currentFrame).show();
-
-//   $(window).on('scroll', function() {
-//     let windowTop = $(window).scrollTop();
-//     let sequenceTop = $imageSequence.offset().top;
-//     let sequenceHeight = $imageSequence.outerHeight();
-//     let windowHeight = $(window).height();
-
-//     // 현재 섹션이 화면의 상단에 닿았을 때 스티키로 설정
-//     if (windowTop >= sequenceTop && windowTop <= sequenceTop + sequenceHeight - windowHeight) {
-//       if (!$isSticky) {
-//         $isSticky = true;
-//         $imageSequence.css({
-//           'position': 'fixed',
-//           'top': 0,
-//           'left': 0,
-//           'width': '100%',
-//           'z-index': 100
-//         });
-//       }
-//     } else {
-//       if ($isSticky) {
-//         $isSticky = false;
-//         $imageSequence.css({
-//           'position': 'static'
-//         });
-//       }
-//     }
-//   });
-
-//   $(window).on('mousewheel', function(event) {
-//     if (event.originalEvent.deltaY > 0) {
-//       // 휠을 아래로
-//       nextSection();
-//     } else {
-//       // 휠을 위로
-//       prevSection();
-//     }
-//   });
-
-//   function nextSection() {
-//     if ($currentFrame < $frameLength - 1) {
-//       $currentFrame++;
-//       showFrame($currentFrame);
-//     } else {
-//       // 이미지가 모두 보일 경우 스티키 상태 해제
-//       if ($isSticky) {
-//         $isSticky = false;
-//         $imageSequence.css({
-//           'position': 'static'
-//         });
-//       }
-//     }
-//   }
-
-//   function prevSection() {
-//     if ($currentFrame > 0) {
-//       $currentFrame--;
-//       showFrame($currentFrame);
-//     }
-//   }
-
-//   function showFrame(index) {
-//     $images.hide();
-//     $images.eq(index).show();
-//   }
-
 
   // project 슬라이드
   const slider = $('.slider');
